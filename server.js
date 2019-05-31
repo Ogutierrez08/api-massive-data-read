@@ -13,7 +13,7 @@ app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
-require('./routes/routes')(app)
+require('./routes/routes')(app, dataRead)
 
 let dataMemory = () => {
   stream.on('data', d => {
