@@ -1,7 +1,8 @@
 module.exports = (app, data) => {
-  app.get('/api/dev/:query', (req, res) => {
+  app.get('/api/dev/', (req, res) => {
+    let query = req.query.query
     let test = []
-    const regex = new RegExp((req.params.query).replace(/\*/g, '.*').replace(/\?/g, '.'))
+    const regex = new RegExp((query).replace(/\*/g, '.*').replace(/\?/g, '.'))
     console.log(regex)
     for (let i = 0; i < data.length; i++) {
       if (regex.test(data[i].name) === true) {
