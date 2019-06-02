@@ -1,5 +1,5 @@
 // eslint-disable-next-line camelcase
-const file_name = '../input/palabras.txt'
+const file_name = './input/palabras.txt'
 
 const readline = require('readline')
 const fs = require('fs')
@@ -38,5 +38,5 @@ lineReader.on('line', line => {
 })
 
 lineReader.on('close', () => {
-  fs.writeFileSync('../data/palabras.txt', JSON.stringify(json, null))
+  fs.writeFileSync('./data/palabras.txt', JSON.stringify(json, null).slice(1, -1))
 })

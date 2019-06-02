@@ -1,6 +1,6 @@
 module.exports = (app, data) => {
   app.get('/api/dev/', (req, res) => {
-    let query = req.query.query
+    let query = req.query.query.toUpperCase()
     let test = []
     const regex = new RegExp((query).replace(/\*/g, '.*').replace(/\?/g, '.'))
     console.log(regex)
